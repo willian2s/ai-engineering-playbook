@@ -1,219 +1,242 @@
-# 🤝 Contributing Guide
+# 🤖 AI Engeneering Playbook
 
-Este projeto adota uma abordagem **AI-assisted engineering**.
+Este diretório contém os prompts oficiais para uso de IA no projeto.
 
-O uso de Inteligência Artificial (AI) é **fortemente recomendado**, pois aumenta produtividade, qualidade e consistência — mas **não é obrigatório**.
+O objetivo é padronizar:
 
----
-
-# 🧠 Princípios
-
-- AI é uma ferramenta para amplificar engenharia
-- Clareza > complexidade
-- Segurança > velocidade
-- Consistência entre serviços é essencial
-- Decisão final sempre é humana
+- geração de regras
+- evolução das regras
+- auditoria técnica
+- uso consistente de AI no time
 
 ---
 
-# 🤖 Uso de AI (recomendado)
+# 📁 Estrutura
 
-Recomendamos o uso de AI nos seguintes cenários:
-
-## 🔹 1. Antes de implementar mudanças relevantes
-
-Use AI para:
-
-- entender o impacto da mudança
-- identificar riscos
-- validar abordagem
-
----
-
-## 🔹 2. Durante implementação
-
-Use AI para:
-
-- gerar código base
-- sugerir melhorias
-- evitar duplicação
-- manter consistência
+```
+/ai
+  /prompts
+    generate-rules-auto.md
+    generate-rules-with-context.md
+    update-rules.md
+    audit-architecture.md
+```
 
 ---
 
-## 🔹 3. Após implementação
+# 🧠 Modelos recomendados
 
-Use AI para:
+| Tipo de tarefa       | Modelo recomendado              |
+| -------------------- | ------------------------------- |
+| Geração de rules     | GPT-5.4                         |
+| Atualização de rules | GPT-5.4                         |
+| Auditoria técnica    | GPT-5.4 ou Claude (Sonnet/Opus) |
+| Uso leve / testes    | GPT-5.1-mini                    |
 
-- revisar código
-- identificar edge cases
-- validar integrações
-- sugerir melhorias
+📌 Regra geral:
 
----
-
-## 🔹 4. Antes de abrir PR
-
-Recomendado:
-
-- revisão com AI
-- análise de impacto
-- validação de regras do projeto
+- Use modelos fortes para tarefas de análise
+- Use modelos leves apenas para tarefas simples
 
 ---
 
-# 🧩 Ferramentas
-
-Você pode utilizar qualquer ferramenta de AI:
-
-- Copilot
-- Cursor
-- Zed
-- Claude Code
-- ou outras
-
-👉 Desde que:
-
-- respeite as regras do projeto
-- não prejudique o fluxo de trabalho do time
-- mantenha consistência com o código existente
+# 📄 Prompts
 
 ---
 
-# 📄 Regras do projeto (obrigatório respeitar)
+## 🥇 generate-rules-auto.md
 
-Independentemente da ferramenta utilizada, é obrigatório seguir:
+### 📌 Objetivo
+
+Gerar automaticamente:
 
 - `.rules`
 - `AGENTS.md`
 - `CLAUDE.md`
 - `.github/copilot-instructions.md`
 
-Esses arquivos definem como o código deve ser escrito e mantido.
+A partir da análise do código.
+
+### 🧠 Quando usar
+
+- Setup inicial do projeto
+- Primeira adoção de AI
+- Após grandes mudanças estruturais
+
+### 🤖 Modelo recomendado
+
+- GPT-5.4
+
+### 📝 Commit (Commitizen)
+
+```
+feat(ai): generate initial AI rules based on repository analysis
+```
 
 ---
 
-# 🧠 Boas práticas com AI
+## 🥈 generate-rules-with-context.md
 
-## ✔️ Faça
+### 📌 Objetivo
 
-- Use AI para acelerar tarefas repetitivas
-- Use AI para revisar código
-- Use AI para entender partes complexas do sistema
-- Combine AI com julgamento técnico
+Gerar regras com base em contexto fornecido manualmente.
 
-## ❌ Evite
+### 🧠 Quando usar
 
-- confiar cegamente na AI
-- gerar código sem entender
-- ignorar padrões do projeto
-- introduzir inconsistências
+- Refinar regras
+- Projetos complexos
+- Ajustes arquiteturais específicos
 
----
+### 🤖 Modelo recomendado
 
-# ✅ Checklist antes do PR
+- GPT-5.4
 
-Antes de abrir um PR, recomenda-se:
+### 📝 Commit
 
-- [ ] Código revisado (com ou sem AI)
-- [ ] Consistência com `.rules`
-- [ ] Impacto avaliado (outros serviços / módulos)
-- [ ] Integrações validadas
-- [ ] Edge cases considerados
+```
+feat(ai): generate AI rules with explicit project context
+```
 
 ---
 
-# 🧠 Uso de modelos (referência)
+## 🥉 update-rules.md
 
-## ⚡ Modelos leves (ex: GPT-5.1-mini)
+### 📌 Objetivo
 
-- autocomplete
-- tarefas simples
-- código repetitivo
+Atualizar regras existentes com base na evolução do código.
 
----
+### 🧠 Quando usar
 
-## 🧠 Modelos avançados (ex: GPT-5.4, Claude)
+- Após refactors
+- Após adicionar serviços
+- Quando AI começa a errar
+- Mudança de arquitetura
 
-- debugging
-- decisões técnicas
-- análise de impacto
-- refatorações
+### 🤖 Modelo recomendado
 
----
+- GPT-5.4
 
-# 🔁 Fluxo recomendado
+### 📝 Commit
 
-1. Entender o problema
-2. (Opcional) Validar com AI
-3. Implementar solução
-4. Revisar (com ou sem AI)
-5. Ajustar
-6. Abrir PR
+```
+chore(ai): update AI rules based on architecture changes
+```
 
 ---
 
-# 🧠 Regras críticas
+## 🔥 audit-architecture.md
 
-Sempre garantir:
+### 📌 Objetivo
 
-- idempotência em operações críticas
-- segurança em retries
-- proteção contra race conditions
-- consistência de dados
-- tratamento seguro de APIs externas
+Executar auditoria técnica completa:
+
+- arquitetura
+- tech debt
+- riscos
+- escalabilidade
+- integrações
+
+### 🧠 Quando usar
+
+- Revisão técnica
+- Planejamento de refactor
+- Onboarding técnico
+- Diagnóstico de problemas
+
+### 🤖 Modelo recomendado
+
+- GPT-5.4 (principal)
+- Claude Sonnet / Opus (alternativo)
+
+### 📝 Commit (se versionar o resultado)
+
+```
+docs(ai): add architecture audit report
+```
+
+ou
+
+```
+chore(ai): update architecture audit
+```
 
 ---
 
-# 🧪 Auditoria e evolução
+# 🧠 Boas práticas
+
+## 1. Não usar modelo fraco para análise
+
+Evite usar GPT-5.1-mini para:
+
+- auditoria
+- geração de rules
+- decisões arquiteturais
+
+---
+
+## 2. Revisar sempre o output
+
+AI não substitui revisão técnica.
+
+Sempre valide:
+
+- regras críticas
+- fluxos de pagamento
+- integrações externas
+
+---
+
+## 3. Versionar mudanças importantes
+
+Rules fazem parte da arquitetura.
+
+Mudanças devem ser commitadas.
+
+---
+
+## 4. Rodar update periodicamente
 
 Recomendado:
 
-- rodar auditorias periódicas
-- atualizar rules após mudanças relevantes
-- revisar padrões do projeto com frequência
+- a cada refactor relevante
+- a cada nova feature crítica
+- mensalmente (mínimo)
 
 ---
 
-# 📝 Commits (Commitizen)
+## 5. Evitar rules genéricas
 
-Padrões:
+Se estiver genérico, refine com:
 
-```bash id="commit-types"
-feat: nova funcionalidade
-fix: correção de bug
-chore: manutenção
-refactor: refatoração
-docs: documentação
-```
+- contexto
+- exemplos reais do código
 
 ---
 
-## 🤖 Commits relacionados a AI (opcional)
+# 🔁 Workflow recomendado
 
-```bash id="commit-ai"
-feat(ai): generate rules
-chore(ai): update rules
-docs(ai): add audit report
-refactor(ai): improvements based on AI suggestions
-```
+1. Gerar rules (auto)
+2. Refinar com contexto
+3. Commit inicial
+4. Evoluir com update-rules
+5. Rodar auditoria periodicamente
 
 ---
 
-# 🧠 Filosofia do time
+# 🧠 Filosofia
 
-- AI é uma ferramenta, não uma obrigação
-- Consistência do código é mais importante que a ferramenta usada
-- O time deve conseguir trabalhar junto independentemente da ferramenta escolhida
+- AI é uma extensão da engenharia
+- Regras são parte do sistema
+- Segurança > velocidade
+- Clareza > complexidade
 
 ---
 
 # 🏁 Conclusão
 
-Você é livre para usar AI da forma que preferir.
+Este setup permite:
 
-👉 Desde que:
-
-- respeite as regras do projeto
-- mantenha qualidade e consistência
-- não impacte negativamente o fluxo do time
+- padronização de AI no time
+- redução de erro
+- melhoria contínua da arquitetura
+- uso consistente entre ferramentas (Zed, Copilot, etc.)
