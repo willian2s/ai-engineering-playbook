@@ -24,141 +24,65 @@ O objetivo é padronizar:
 
 ---
 
-# 🧠 Modelos recomendados
+# 🧠 Uso de modelos (recomendado)
 
-| Tipo de tarefa       | Modelo recomendado              |
-| -------------------- | ------------------------------- |
-| Geração de rules     | GPT-5.4                         |
-| Atualização de rules | GPT-5.4                         |
-| Auditoria técnica    | GPT-5.4 ou Claude (Sonnet/Opus) |
-| Uso leve / testes    | GPT-5.1-mini                    |
+## 📊 Distribuição de uso
 
-📌 Regra geral:
-
-- Use modelos fortes para tarefas de análise
-- Use modelos leves apenas para tarefas simples
+| Categoria        | % de uso    | Objetivo                    |
+| ---------------- | ----------- | --------------------------- |
+| ⚡ Leve (Flow)   | 70–80%      | Velocidade e produtividade  |
+| 🧠 Intermediário | 15–25%      | Desenvolvimento padrão      |
+| 🔥 Avançado      | 5–10%       | Análise e decisões críticas |
+| 🤖 Agent         | Sob demanda | Automação e execução        |
 
 ---
 
-# 📄 Prompts
+## ⚡ Tarefas leves (70–80%)
+
+| Ferramenta     | Modelos recomendados | Quando usar                   |
+| -------------- | -------------------- | ----------------------------- |
+| GitHub Copilot | GPT-5.1-mini         | Autocomplete, funções simples |
+| OpenAI         | GPT-5 mini           | CRUD, código repetitivo       |
+| Claude         | Claude Haiku         | Ajustes rápidos               |
 
 ---
 
-## 🥇 generate-rules-auto.md
+## 🧠 Desenvolvimento padrão (15–25%)
 
-### 📌 Objetivo
-
-Gerar automaticamente:
-
-- `.rules`
-- `AGENTS.md`
-- `CLAUDE.md`
-- `.github/copilot-instructions.md`
-
-A partir da análise do código.
-
-### 🧠 Quando usar
-
-- Setup inicial do projeto
-- Primeira adoção de AI
-- Após grandes mudanças estruturais
-
-### 🤖 Modelo recomendado
-
-- GPT-5.4
-
-### 📝 Commit (Commitizen)
-
-```
-feat(ai): generate initial AI rules based on repository analysis
-```
+| Ferramenta     | Modelos recomendados | Quando usar        |
+| -------------- | -------------------- | ------------------ |
+| GitHub Copilot | GPT-5.4              | Features completas |
+| GitHub Copilot | Claude Sonnet        | Código mais limpo  |
+| OpenAI         | GPT-5.4              | APIs, validações   |
+| Claude         | Claude Sonnet        | Regras de negócio  |
 
 ---
 
-## 🥈 generate-rules-with-context.md
+## 🔥 Problemas complexos (5–10%)
 
-### 📌 Objetivo
-
-Gerar regras com base em contexto fornecido manualmente.
-
-### 🧠 Quando usar
-
-- Refinar regras
-- Projetos complexos
-- Ajustes arquiteturais específicos
-
-### 🤖 Modelo recomendado
-
-- GPT-5.4
-
-### 📝 Commit
-
-```
-feat(ai): generate AI rules with explicit project context
-```
+| Ferramenta     | Modelos recomendados | Quando usar                    |
+| -------------- | -------------------- | ------------------------------ |
+| GitHub Copilot | GPT-5.4              | Debugging complexo             |
+| OpenAI         | GPT-5.4              | Análise de múltiplos arquivos  |
+| Claude         | Claude Sonnet / Opus | Arquitetura, decisões críticas |
 
 ---
 
-## 🥉 update-rules.md
+## 🤖 Agent / automação (sob demanda)
 
-### 📌 Objetivo
-
-Atualizar regras existentes com base na evolução do código.
-
-### 🧠 Quando usar
-
-- Após refactors
-- Após adicionar serviços
-- Quando AI começa a errar
-- Mudança de arquitetura
-
-### 🤖 Modelo recomendado
-
-- GPT-5.4
-
-### 📝 Commit
-
-```
-chore(ai): update AI rules based on architecture changes
-```
+| Ferramenta     | Modelos recomendados | Quando usar            |
+| -------------- | -------------------- | ---------------------- |
+| OpenAI         | GPT-5.3 Codex        | Refactor multi-arquivo |
+| GitHub Copilot | Codex (agent)        | Execução assistida     |
+| Claude         | Claude (agent tools) | Análise + execução     |
 
 ---
 
-## 🔥 audit-architecture.md
+## ⚖️ Regra geral
 
-### 📌 Objetivo
-
-Executar auditoria técnica completa:
-
-- arquitetura
-- tech debt
-- riscos
-- escalabilidade
-- integrações
-
-### 🧠 Quando usar
-
-- Revisão técnica
-- Planejamento de refactor
-- Onboarding técnico
-- Diagnóstico de problemas
-
-### 🤖 Modelo recomendado
-
-- GPT-5.4 (principal)
-- Claude Sonnet / Opus (alternativo)
-
-### 📝 Commit (se versionar o resultado)
-
-```
-docs(ai): add architecture audit report
-```
-
-ou
-
-```
-chore(ai): update architecture audit
-```
+- Use modelos leves para velocidade
+- Use modelos fortes para análise
+- Use agentes para escala
 
 ---
 
