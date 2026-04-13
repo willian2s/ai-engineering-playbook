@@ -28,61 +28,84 @@ O objetivo é padronizar:
 
 ## 📊 Distribuição de uso
 
-| Categoria        | % de uso    | Objetivo                    |
-| ---------------- | ----------- | --------------------------- |
-| ⚡ Leve (Flow)   | 70–80%      | Velocidade e produtividade  |
-| 🧠 Intermediário | 15–25%      | Desenvolvimento padrão      |
-| 🔥 Avançado      | 5–10%       | Análise e decisões críticas |
-| 🤖 Agent         | Sob demanda | Automação e execução        |
+| Categoria       | % de uso | Objetivo                 |
+| --------------- | -------- | ------------------------ |
+| ⚡ Médio (Flow) | 60–70%   | Desenvolvimento e edição |
+| 🔥 Alto         | 20–30%   | Debugging e análise      |
+| 🤖 Agent        | 5–10%    | Execução e automação     |
+| 🧠 Refinamento  | Contínuo | Qualidade e arquitetura  |
 
 ---
 
-## ⚡ Tarefas leves (70–80%)
+## ⚡ Médio (Flow)
 
-| Ferramenta     | Modelos recomendados | Quando usar                   |
-| -------------- | -------------------- | ----------------------------- |
-| GitHub Copilot | GPT-5.1-mini         | Autocomplete, funções simples |
-| OpenAI         | GPT-5 mini           | CRUD, código repetitivo       |
-| Claude         | Claude Haiku         | Ajustes rápidos               |
+| Modelo        | Quando usar                           |
+| ------------- | ------------------------------------- |
+| GPT-5.1-mini  | CRUD, ajustes, código repetitivo      |
+| GPT-5.4       | Features completas, lógica de negócio |
+| Claude Sonnet | Código mais limpo, melhor estrutura   |
 
----
+👉 Uso típico:
 
-## 🧠 Desenvolvimento padrão (15–25%)
-
-| Ferramenta     | Modelos recomendados | Quando usar        |
-| -------------- | -------------------- | ------------------ |
-| GitHub Copilot | GPT-5.4              | Features completas |
-| GitHub Copilot | Claude Sonnet        | Código mais limpo  |
-| OpenAI         | GPT-5.4              | APIs, validações   |
-| Claude         | Claude Sonnet        | Regras de negócio  |
+- inline edit
+- desenvolvimento normal
+- implementação de features
 
 ---
 
-## 🔥 Problemas complexos (5–10%)
+## 🔥 Alto (Análise e Debugging)
 
-| Ferramenta     | Modelos recomendados | Quando usar                    |
-| -------------- | -------------------- | ------------------------------ |
-| GitHub Copilot | GPT-5.4              | Debugging complexo             |
-| OpenAI         | GPT-5.4              | Análise de múltiplos arquivos  |
-| Claude         | Claude Sonnet / Opus | Arquitetura, decisões críticas |
+| Modelo        | Quando usar                              |
+| ------------- | ---------------------------------------- |
+| GPT-5.4       | Debugging complexo, múltiplos arquivos   |
+| Claude Sonnet | Análise de código, entendimento profundo |
+| Claude Opus   | Problemas difíceis e não óbvios          |
+
+👉 Uso típico:
+
+- investigação de bugs
+- leitura de fluxo completo
+- análise cross-service
 
 ---
 
-## 🤖 Agent / automação (sob demanda)
+## 🤖 Agent (Execução)
 
-| Ferramenta     | Modelos recomendados | Quando usar            |
-| -------------- | -------------------- | ---------------------- |
-| OpenAI         | GPT-5.3 Codex        | Refactor multi-arquivo |
-| GitHub Copilot | Codex (agent)        | Execução assistida     |
-| Claude         | Claude (agent tools) | Análise + execução     |
+| Modelo         | Quando usar                       |
+| -------------- | --------------------------------- |
+| GPT-5.3 Codex  | Refactor multi-arquivo, automação |
+| Claude (Agent) | Execução + análise combinada      |
+
+👉 Uso típico:
+
+- mudanças estruturais
+- edição em múltiplos arquivos
+- automação de tarefas
+
+---
+
+## 🧠 Refinamento (Qualidade e Arquitetura)
+
+| Modelo        | Quando usar                           |
+| ------------- | ------------------------------------- |
+| Claude Sonnet | Refactor elegante, melhoria de código |
+| Claude Opus   | Arquitetura, decisões críticas        |
+| GPT-5.4       | Validação técnica e trade-offs        |
+
+👉 Uso típico:
+
+- revisão de código
+- melhoria de arquitetura
+- simplificação de lógica
+- validação de decisões
 
 ---
 
 ## ⚖️ Regra geral
 
-- Use modelos leves para velocidade
-- Use modelos fortes para análise
-- Use agentes para escala
+- GPT → velocidade, execução e escala
+- Claude → qualidade, clareza e arquitetura
+- Codex → automação e execução multi-arquivo
 
 ---
 
@@ -150,9 +173,11 @@ Se estiver genérico, refine com:
 # 🧠 Filosofia
 
 - AI é uma extensão da engenharia
-- Regras são parte do sistema
-- Segurança > velocidade
+- Use GPT para fazer
+- Use Claude para pensar
+- Use Agents para escalar
 - Clareza > complexidade
+- Segurança > velocidade
 
 ---
 
@@ -164,3 +189,6 @@ Este setup permite:
 - redução de erro
 - melhoria contínua da arquitetura
 - uso consistente entre ferramentas (Zed, Copilot, etc.)
+- melhor aproveitamento dos modelos disponíveis
+- equilíbrio entre velocidade e qualidade
+- evolução contínua da arquitetura
