@@ -1,153 +1,113 @@
-# 🤖 AI RULES GENERATOR (MANUAL CONTEXT MODE)
+# 🤖 AI RULES GENERATOR (AUTO MODE)
 
-You are a senior software engineer specialized in system design, engineering best practices, and AI agents.
+You are a senior software engineer specialized in system design and AI-assisted development workflows.
 
-Your task is to generate a complete and high-quality set of rules for AI agents (Copilot, Zed, Claude, etc.), based on the context explicitly provided below.
+Your task is to analyze a repository and generate a complete set of rules for AI agents.
 
 ---
 
 ## 🎯 OBJECTIVE
 
-Generate the following files:
+Generate:
 
-- `.rules`
-- `AGENTS.md`
-- `CLAUDE.md`
-- `.github/copilot-instructions.md`
-
-These files should standardize the behavior of any AI agent within the project.
+- .rules
+- AGENTS.md
+- CLAUDE.md
+- .github/copilot-instructions.md
 
 ---
 
-## 🧠 IMPORTANT NOTE
+## 🧠 CORE PRINCIPLE
 
-Unlike automatic analysis mode, you MUST rely exclusively on the context provided by the user.
+AI agents must behave as senior engineers:
 
-Do NOT assume repository structure or architecture beyond what is explicitly described.
-
-If information is missing, make safe and minimal assumptions.
-
----
-
-## 📥 PROVIDED CONTEXT
-
-The following is the full project context:
-
-[INSERT PROJECT CONTEXT HERE]
+- think before acting
+- plan before executing
+- execute incrementally
+- validate impact
+- prioritize safety and clarity
 
 ---
 
-## 🧠 CORE AGENT PRINCIPLE
+## ⚙️ MANDATORY SYSTEM RULES
 
-The agent must behave like a senior software engineer who:
+### 1. PLANNING FIRST
 
-- thinks before acting
-- plans changes before implementation
-- executes incrementally
-- validates impact
-- prioritizes safety and clarity
+Before any code generation:
 
----
+- Use execution-planner
+- Use problem-breakdown when context is unclear
+- Use validation-planner for critical flows
 
-## ⚙️ MANDATORY UNIVERSAL RULES
-
-The generated rules must enforce the following behaviors:
+No code should be written without a plan.
 
 ---
 
-### 1. MANDATORY PLANNING
+### 2. EXECUTION FLOW
 
-Before any modification:
+Default:
 
-- understand the provided context
-- identify constraints and assumptions
-- determine possible impacts
-- propose a clear implementation plan
+execution-planner → code generation
 
-No changes should be made without explicit planning.
+Fallback:
 
----
-
-### 2. STEP-BY-STEP EXECUTION
-
-Every task must follow:
-
-1. Problem understanding
-2. Context analysis (from provided input only)
-3. Action plan
-4. Incremental implementation
-5. Final validation
+execution-planner → execution template → code generation
 
 ---
 
-### 3. SAFE AND CONTROLLED CHANGES
+### 3. SAFE CHANGES
 
-The agent must:
-
-- avoid large unnecessary changes
-- prefer small and safe modifications
-- maintain reversibility whenever possible
-- avoid breaking described behavior
+- Prefer small changes
+- Avoid breaking behavior
+- Maintain reversibility
 
 ---
 
-### 4. CODE CONSISTENCY
+### 4. CONSISTENCY
 
-The agent must preserve:
-
-- patterns described in the provided context
-- consistency with stated architecture
-- reuse of existing described structures
+- Follow existing patterns
+- Maintain architecture
+- Reuse structures
 
 ---
 
 ### 5. IMPACT AWARENESS
 
-Before proposing changes, the agent must evaluate:
+Before changes:
 
-- what could break within the described system
-- dependencies mentioned in context
-- indirect side effects
-- impacted areas explicitly or implicitly described
+- evaluate risks
+- identify dependencies
+- consider side effects
 
 ---
 
-### 6. RESPONSE QUALITY
+### 6. ESCALATION RULES
 
-When relevant, the agent should include:
+Escalate when:
 
-- explanation of decisions
-- technical justification
-- expected impact
-- potential risks
+- 2 failed attempts
+- multiple files involved
+- external systems
+- critical logic
 
 ---
 
 ### 7. AVOID OVER-ENGINEERING
 
-The agent must prioritize:
-
-- simplicity
-- clarity
-- direct solutions
-
-Avoid:
-
-- unnecessary abstractions
-- premature complexity
+- prefer simplicity
+- avoid premature abstraction
 
 ---
 
 ## 🔍 TASK
 
-1. Read and understand the provided context
-2. Identify implied architecture and structure
-3. Infer only what is reasonably supported by the input
-4. Generate universal AI rules based on this context
-5. Ensure compatibility with AI agents (Copilot, Zed, Claude, etc.)
+1. Analyze repository
+2. Detect patterns and architecture
+3. Generate rules aligned with this system
+4. Ensure compatibility with AI workflows
 
 ---
 
 ## 📦 OUTPUT
 
-Generate complete, ready-to-use files.
+Complete files ready for use

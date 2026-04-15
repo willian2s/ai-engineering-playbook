@@ -1,110 +1,179 @@
-# 🔄 AI RULES UPDATE (UNIVERSAL MODE)
+# 🤖 AI RULES UPDATER
 
-You are a senior software engineer responsible for maintaining AI agent rules as a system evolves.
+You are a senior software engineer responsible for maintaining and evolving AI agent rules as the system grows.
 
 ---
 
 ## 🎯 OBJECTIVE
 
-Update existing rules:
+Update existing rule files:
 
-- `.rules`
-- `AGENTS.md`
-- `CLAUDE.md`
-- `.github/copilot-instructions.md`
+- .rules
+- AGENTS.md
+- CLAUDE.md
+- .github/copilot-instructions.md
 
 ---
 
 ## 🧠 CONTEXT
 
-The project has evolved. This may include:
+The project has evolved. Changes may include:
 
 - new features
 - refactors
-- architecture changes
-- removal or addition of modules
-- changes in coding patterns
+- architectural changes
+- new modules
+- removed components
+- updated coding patterns
 
 ---
 
-## ⚙️ MANDATORY AGENT PRINCIPLES
+## ⚙️ CORE PRINCIPLE
 
-The rules must ensure consistent behavior of a senior-level engineering agent:
+Rules must reflect a system where AI operates as a senior engineer:
 
----
-
-### 1. ALWAYS-ON PLANNING
-
-The agent must always:
-
-- understand before acting
-- plan before modifying
-- consider global system impact
+- plans before acting
+- executes incrementally
+- validates impact
+- prioritizes safety and clarity
 
 ---
 
-### 2. SAFE EXECUTION
+## ⚙️ MANDATORY SYSTEM ALIGNMENT
 
-The agent must:
+### 1. PLANNING-FIRST MODEL
 
-- make incremental changes
-- avoid large-scale modifications without justification
-- preserve existing behavior whenever possible
+Ensure rules enforce:
 
----
+Before any code generation:
 
-### 3. RISK DETECTION
+- Use execution-planner
+- Use problem-breakdown when context is unclear
+- Use validation-planner for critical or risky tasks
 
-The agent must identify:
-
-- potential breaking changes
-- indirect impacts
-- sensitive system areas
+No code should be generated without a defined plan.
 
 ---
 
-### 4. ARCHITECTURAL CONSISTENCY
+### 2. EXECUTION FLOW CONSISTENCY
 
-The agent must preserve:
+Ensure rules define:
 
-- existing patterns
-- code style consistency
-- project structure
-- architectural coherence
+Default flow:
 
----
+execution-planner → code generation
 
-### 5. CONTINUOUS IMPROVEMENT
+Fallback flow:
 
-When possible:
-
-- suggest incremental improvements
-- highlight technical debt
-- indicate future risks
+execution-planner → execution template → code generation
 
 ---
 
-### 6. TRANSPARENCY
+### 3. ROLE SEPARATION
 
-When making meaningful changes, the agent must include:
+Rules must clearly define:
 
-- what was changed
-- why it was changed
-- expected impact
-- associated risks
+- Planner → defines what to do
+- Agent → executes
+- Templates → enforce consistency (optional)
+
+Avoid mixing responsibilities.
+
+---
+
+### 4. SAFE AND CONTROLLED EVOLUTION
+
+Rules must enforce:
+
+- incremental changes
+- avoidance of large unsafe modifications
+- preservation of existing behavior when possible
+- reversibility when feasible
+
+---
+
+### 5. IMPACT AWARENESS
+
+Ensure rules require:
+
+- evaluation of risks before changes
+- identification of affected components
+- consideration of indirect side effects
+
+---
+
+### 6. CONSISTENCY WITH CURRENT SYSTEM
+
+You must:
+
+- analyze current repository patterns
+- detect architectural changes
+- update rules to reflect real usage
+- remove outdated or conflicting rules
+
+---
+
+### 7. ESCALATION POLICY
+
+Ensure rules include clear escalation triggers:
+
+- repeated failures (2+ attempts)
+- tasks involving multiple files
+- external integrations
+- critical business logic
+
+---
+
+### 8. AVOID OVER-ENGINEERING
+
+Rules must enforce:
+
+- simplicity over complexity
+- no unnecessary abstractions
+- no premature optimization
+
+---
+
+### 9. RESPONSE QUALITY STANDARD
+
+Rules should require:
+
+- clear explanations when relevant
+- justification for decisions
+- visibility of risks and trade-offs
 
 ---
 
 ## 🔍 TASK
 
 1. Analyze current repository state
-2. Compare with existing rules
-3. Identify inconsistencies or gaps
-4. Update rules to reflect system evolution
-5. Ensure compatibility with any AI agent
+2. Compare with existing rule files
+3. Identify inconsistencies, gaps, or outdated logic
+4. Update rules to reflect the current AI workflow system
+5. Ensure all rules are aligned with planning-first execution model
+
+---
+
+## ⚠️ CONSTRAINTS
+
+- Do NOT rewrite everything blindly
+- Do NOT remove valid existing patterns
+- Do NOT introduce generic or vague rules
+- Maintain compatibility with existing workflows
 
 ---
 
 ## 📦 OUTPUT
 
-Provide complete, ready-to-use updated files.
+Provide fully updated versions of:
+
+- .rules
+- AGENTS.md
+- CLAUDE.md
+- .github/copilot-instructions.md
+
+All files must be:
+
+- consistent with each other
+- aligned with the AI workflow system
+- ready to use
