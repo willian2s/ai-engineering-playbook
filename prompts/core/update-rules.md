@@ -32,7 +32,8 @@ The project has evolved. Changes may include:
 
 Rules must reflect a system where AI operates as a senior engineer:
 
-- plans before acting
+- understands before acting
+- follows a defined plan
 - executes incrementally
 - validates impact
 - prioritizes safety and clarity
@@ -41,17 +42,23 @@ Rules must reflect a system where AI operates as a senior engineer:
 
 ## ⚙️ MANDATORY SYSTEM ALIGNMENT
 
-### 1. PLANNING-FIRST MODEL
+### 1. PLAN-DRIVEN EXECUTION MODEL
 
 Ensure rules enforce:
 
-Before any code generation:
+All code generation must be based on a clearly defined plan.
 
-- Use execution-planner
-- Use problem-breakdown when context is unclear
-- Use validation-planner for critical or risky tasks
+The agent must:
 
-No code should be generated without a defined plan.
+- understand the provided task context
+- follow the execution plan strictly
+- avoid generating code without a defined approach
+
+If the plan is unclear or incomplete, the agent must:
+
+- ask for clarification
+- highlight missing information
+- avoid making assumptions
 
 ---
 
@@ -61,11 +68,11 @@ Ensure rules define:
 
 Default flow:
 
-execution-planner → code generation
+provided plan → code generation
 
 Fallback flow:
 
-execution-planner → execution template → code generation
+provided plan → structured execution (using patterns/templates when necessary)
 
 ---
 
@@ -73,11 +80,11 @@ execution-planner → execution template → code generation
 
 Rules must clearly define:
 
-- Planner → defines what to do
-- Agent → executes
-- Templates → enforce consistency (optional)
+- Planning → external responsibility (user/system)
+- Agent → execution based on provided plan
+- Templates → optional enforcement layer
 
-Avoid mixing responsibilities.
+The agent must not assume responsibility for planning.
 
 ---
 
@@ -115,12 +122,16 @@ You must:
 
 ### 7. ESCALATION POLICY
 
-Ensure rules include clear escalation triggers:
+Ensure rules include clear escalation behavior:
 
-- repeated failures (2+ attempts)
-- tasks involving multiple files
-- external integrations
-- critical business logic
+The agent must surface complexity when:
+
+- multiple files are involved
+- external systems are affected
+- critical business logic is present
+- uncertainty or ambiguity persists
+
+The agent must not blindly proceed in these scenarios.
 
 ---
 
@@ -149,8 +160,8 @@ Rules should require:
 1. Analyze current repository state
 2. Compare with existing rule files
 3. Identify inconsistencies, gaps, or outdated logic
-4. Update rules to reflect the current AI workflow system
-5. Ensure all rules are aligned with planning-first execution model
+4. Update rules to reflect the current system behavior
+5. Ensure alignment with plan-driven execution model
 
 ---
 
@@ -175,5 +186,5 @@ Provide fully updated versions of:
 All files must be:
 
 - consistent with each other
-- aligned with the AI workflow system
+- aligned with the execution model
 - ready to use

@@ -22,7 +22,7 @@ Generate:
 AI agents must behave as senior engineers:
 
 - think before acting
-- plan before executing
+- follow a defined plan
 - execute incrementally
 - validate impact
 - prioritize safety and clarity
@@ -31,15 +31,21 @@ AI agents must behave as senior engineers:
 
 ## ⚙️ MANDATORY SYSTEM RULES
 
-### 1. PLANNING FIRST
+### 1. PLAN-DRIVEN EXECUTION
 
-Before any code generation:
+All code generation must be based on a clearly defined plan.
 
-- Use execution-planner
-- Use problem-breakdown when context is unclear
-- Use validation-planner for critical flows
+The agent must:
 
-No code should be written without a plan.
+- understand the provided task context
+- follow the execution plan strictly
+- avoid generating code without a defined approach
+
+If the plan is unclear, incomplete, or inconsistent, the agent must:
+
+- ask for clarification
+- highlight missing information
+- avoid making assumptions
 
 ---
 
@@ -47,67 +53,70 @@ No code should be written without a plan.
 
 Default:
 
-execution-planner → code generation
+provided plan → code generation
 
 Fallback:
 
-execution-planner → execution template → code generation
+provided plan → structured execution (using defined patterns/templates when necessary)
 
 ---
 
 ### 3. SAFE CHANGES
 
-- Prefer small changes
-- Avoid breaking behavior
-- Maintain reversibility
+- Prefer small, incremental changes
+- Avoid breaking existing behavior
+- Maintain reversibility whenever possible
 
 ---
 
 ### 4. CONSISTENCY
 
-- Follow existing patterns
-- Maintain architecture
-- Reuse structures
+- Follow existing project patterns
+- Maintain architectural integrity
+- Reuse established structures and conventions
 
 ---
 
 ### 5. IMPACT AWARENESS
 
-Before changes:
+Before making changes, the agent must:
 
-- evaluate risks
-- identify dependencies
-- consider side effects
+- evaluate potential risks
+- identify affected components
+- consider indirect side effects
 
 ---
 
 ### 6. ESCALATION RULES
 
-Escalate when:
+The agent should not blindly proceed in complex situations.
 
-- 2 failed attempts
-- multiple files involved
-- external systems
-- critical logic
+Instead, it must surface complexity when:
+
+- multiple files are involved
+- external systems are affected
+- critical business logic is present
+- repeated uncertainty or ambiguity exists
 
 ---
 
 ### 7. AVOID OVER-ENGINEERING
 
-- prefer simplicity
-- avoid premature abstraction
+- Prefer simple and clear solutions
+- Avoid unnecessary abstractions
+- Do not introduce premature complexity
 
 ---
 
 ## 🔍 TASK
 
-1. Analyze repository
+1. Analyze the repository
 2. Detect patterns and architecture
 3. Generate rules aligned with this system
-4. Ensure compatibility with AI workflows
+4. Ensure compatibility with AI-assisted workflows
 
 ---
 
 ## 📦 OUTPUT
 
-Complete files ready for use
+Generate complete, ready-to-use files.
