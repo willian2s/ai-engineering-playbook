@@ -1,179 +1,250 @@
-# 📄 AI Prompts
+# 📄 AI Engineering System
 
-Este diretório contém os prompts oficiais utilizados no projeto.
+Este diretório contém o sistema completo de engenharia assistida por IA do projeto.
 
-Cada prompt tem um papel específico dentro do ciclo de vida da engenharia.
+Ele padroniza como problemas são:
 
----
-
-# 🧠 Visão geral
-
-| Prompt                      | Objetivo                         |
-| --------------------------- | -------------------------------- |
-| generate-rules-auto         | Criar regras automaticamente     |
-| generate-rules-with-context | Criar regras com contexto manual |
-| update-rules                | Atualizar regras existentes      |
-| audit-architecture          | Auditar sistema completo         |
+- entendidos
+- planejados
+- validados
+- implementados
+- evoluídos
 
 ---
 
-# 🥇 generate-rules-auto.md
+# 🧠 Princípio central
 
-## 📌 Objetivo
+> Um único source of truth: AGENTS.md
 
-Gerar automaticamente:
-
-- `.rules`
-- `AGENTS.md`
-- `CLAUDE.md`
-- `.github/copilot-instructions.md`
-
-A partir da análise do código.
+- Todas as regras de comportamento dos agents ficam centralizadas
+- NÃO usar múltiplos arquivos de rules
+- NÃO duplicar instruções entre ferramentas
 
 ---
 
-## 🧠 Quando usar
+# 🧩 Arquitetura do sistema
 
-- Setup inicial do projeto
-- Primeira adoção de AI
-- Após grandes mudanças estruturais
+O fluxo segue uma separação clara de responsabilidades:
 
----
-
-## 🤖 Modelo recomendado
-
-- GPT-5.4
+problem → breakdown → planning → validation → execution → code
 
 ---
 
-## 📝 Commit
+# 🧠 Etapas do sistema
 
-```
-feat(ai): generate initial AI rules based on repository analysis
-```
+## 1. 🧠 Problem Breakdown
 
----
+Objetivo: entender profundamente o problema
 
-# 🥈 generate-rules-with-context.md
+Responsável por:
 
-## 📌 Objetivo
+- separar problema vs sintoma
+- identificar complexidade oculta
+- mapear dependências
+- levantar riscos e unknowns
 
-Gerar regras com base em contexto fornecido manualmente.
+Quando usar:
 
----
-
-## 🧠 Quando usar
-
-- Refinar regras
-- Projetos complexos
-- Ajustes arquiteturais específicos
+- problema não está claro
+- múltiplos sistemas envolvidos
+- risco de dados ou concorrência
+- ambiguidade
 
 ---
 
-## 🤖 Modelo recomendado
+## 2. ⚙️ Execution Planning
 
-- GPT-5.4
+Objetivo: transformar o problema em plano executável
 
----
+Responsável por:
 
-## 📝 Commit
+- definir estratégia
+- quebrar em etapas pequenas
+- minimizar impacto
+- evitar overengineering
 
-```
-feat(ai): generate AI rules with explicit project context
-```
+Quando usar:
 
----
-
-# 🥉 update-rules.md
-
-## 📌 Objetivo
-
-Atualizar regras existentes com base na evolução do código.
+- problema já entendido
+- pronto para estruturar execução
 
 ---
 
-## 🧠 Quando usar
+## 3. 🔍 Validation
 
-- Após refactors
-- Após adicionar serviços
-- Quando AI começa a errar
-- Mudança de arquitetura
+Objetivo: validar criticamente o plano antes de executar
 
----
+Responsável por:
 
-## 🤖 Modelo recomendado
+- encontrar falhas e gaps
+- detectar riscos reais
+- questionar decisões implícitas
+- evitar erro em produção
 
-- GPT-5.4
+Quando usar:
 
----
-
-## 📝 Commit
-
-```
-chore(ai): update AI rules based on architecture changes
-```
+- task crítica
+- impacto em dados
+- fluxo complexo
+- dúvida sobre segurança
 
 ---
 
-# 🔥 audit-architecture.md
+## 4. 🎯 Execution
 
-## 📌 Objetivo
+Objetivo: implementar com segurança e consistência
 
-Executar auditoria técnica completa:
+Responsável por:
 
+- seguir plano estritamente
+- aplicar boas práticas
+- evitar abstrações desnecessárias
+- manter consistência com AGENTS.md
+
+---
+
+## 5. 🤖 AGENTS.md
+
+Objetivo: garantir comportamento consistente dos agents
+
+Define:
+
+- padrões de código
 - arquitetura
-- tech debt
-- riscos
+- regras de execução
+- controle de dependências
+- boas práticas gerais
+
+---
+
+## 6. 🔥 Architecture Audit
+
+Objetivo: avaliar a qualidade do sistema
+
+Analisa:
+
+- estrutura
+- acoplamento
+- complexidade
+- redundância
 - escalabilidade
-- integrações
 
 ---
 
-## 🧠 Quando usar
+# ⚙️ Fluxos práticos
 
-- Revisão técnica
-- Planejamento de refactor
-- Onboarding técnico
-- Diagnóstico de problemas
+## Fluxo simples (80%)
 
----
-
-## 🤖 Modelo recomendado
-
-- GPT-5.4 (principal)
-- Claude Sonnet / Opus (alternativo)
+execution-planner → execution → code
 
 ---
 
-## 📝 Commit
+## Fluxo completo (20%)
 
-```
-docs(ai): add architecture audit report
-```
-
-ou
-
-```
-chore(ai): update architecture audit
-```
+problem-breakdown
+→ execution-planner
+→ validation-planner
+→ execution
+→ code
 
 ---
 
-# 🧠 Boas práticas
+# ⚖️ Regra de decisão
 
-- Sempre usar modelos fortes para análise
-- Revisar resultados antes de aplicar
-- Versionar mudanças relevantes
-- Manter prompts atualizados com o projeto
+Simples → execution-planner + execution
+
+Complexo ou arriscado:
+→ problem-breakdown
+→ execution-planner
+→ validation-planner
+→ execution
+
+---
+
+# 🚨 Quando usar fluxo completo
+
+- impacto em dados
+- múltiplos serviços
+- lógica crítica
+- concorrência / async
+- mudanças estruturais
+
+---
+
+# 🧠 Princípios de engenharia
+
+- Não codar sem entender o problema
+- Validar antes de executar quando houver risco
+- Preferir soluções simples
+- Evitar abstrações desnecessárias
+- Evitar dependências para problemas triviais
+- Reutilizar antes de criar
+- Fazer mudanças incrementais
+
+---
+
+# ⚙️ Execução
+
+## Backend
+
+Foco em:
+
+- consistência de dados
+- performance
+- segurança
+- concorrência e async
+
+---
+
+## Frontend
+
+Foco em:
+
+- estado e renderização
+- consistência de UI/UX
+- controle de re-render
+- tratamento de loading/erro
+
+---
+
+# 🔧 Gestão de regras
+
+generate-rules:
+
+- cria AGENTS.md baseado no projeto
+
+update-rules:
+
+- mantém AGENTS.md atualizado com a evolução do sistema
+
+---
+
+# 🚀 Boas práticas
+
+- revisar outputs antes de aplicar
+- versionar mudanças relevantes
+- manter prompts alinhados com o projeto
+- usar IA como apoio, não substituição de decisão
 
 ---
 
 # 🏁 Conclusão
 
-Esses prompts são parte da arquitetura do projeto.
+Este não é apenas um conjunto de prompts.
 
-Devem ser utilizados de forma consistente para garantir:
+É um sistema de engenharia assistida por IA que garante:
 
-- qualidade
-- padronização
-- evolução contínua
+- previsibilidade
+- consistência
+- qualidade de código
+- redução de bugs
+- menos retrabalho
+
+---
+
+## Resultado esperado
+
+- código mais limpo
+- decisões mais conscientes
+- execução mais segura
+- uso eficiente de IA no dia a dia
