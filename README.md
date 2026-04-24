@@ -1,250 +1,150 @@
-# 🤖 AI Engineering Playbook
+# 🤖 AI Engineering System
 
-Este repositório define um sistema estruturado para uso de IA no desenvolvimento de software.
+Este diretório define como a IA é utilizada no projeto.
 
-O objetivo é transformar IA em uma ferramenta previsível, consistente e escalável, garantindo qualidade de engenharia e evitando comportamento aleatório.
+O objetivo é manter o uso de IA:
 
----
-
-# 🎯 Objetivo
-
-Padronizar:
-
-- como problemas são analisados
-- como soluções são planejadas
-- como decisões técnicas são tomadas
-- como código é implementado
-- como escalar o uso de IA com segurança
+- simples
+- consistente
+- previsível
 
 ---
 
-# 🧠 Filosofia
+# 🧠 Princípio central
 
-A IA deve operar como um engenheiro sênior que:
+> Um único source of truth: AGENTS.md
 
-- pensa antes de agir
-- planeja antes de executar
-- trabalha de forma incremental
-- valida impacto
-- evita complexidade desnecessária
+- Todas as regras ficam no AGENTS.md
+- Não duplicar regras em prompts
+- Não criar variações por ferramenta
 
 ---
 
-# 📁 Estrutura do projeto
+# 📁 Estrutura
 
-```
-/ai
-  /prompts
-    /core
-      generate-rules-auto.md
-      update-rules.md
-      audit-architecture.md
-    /planning
-      problem-breakdown.md
-      execution-planner.md
-      validation-planner.md
-    /execution
-      backend-pattern.md
-      frontend-pattern.md
-```
+.ai/
+
+core/ → geração e atualização de rules
+tasks/ → execução de tarefas
 
 ---
 
-# ⚙️ Fluxo principal
+# 🤖 AGENTS.md
 
-problem → breakdown → planning → validation → execution → code
+Define o comportamento dos agents:
+
+- arquitetura
+- padrões de código
+- boas práticas
+- regras de execução
+- uso de dependências
+
+👉 É a base de tudo
 
 ---
 
-# 🧠 Etapas do sistema
+# ⚙️ CORE
 
-## 1. Problem Breakdown (opcional)
+Responsável por gerar e manter o AGENTS.md.
 
-Usado quando:
+Inclui prompts como:
 
-- o problema não está claro
+- generate-rules → cria regras com base no projeto
+- update-rules → mantém regras atualizadas
+
+---
+
+# 🎯 TASKS
+
+A pasta `tasks/` contém prompts de execução.
+
+Cada task:
+
+- recebe uma descrição
+- segue o AGENTS.md
+- gera código diretamente
+
+---
+
+## 📄 Exemplo
+
+Arquivo: `tasks/EXAMPLE.md`
+
+    # 🎯 EXECUTION AGENT
+
+    You are a senior software engineer.
+
+    Your role is to implement the requested task following AGENTS.md.
+
+    ---
+
+    ## 🎯 TASK
+
+    [DESCREVA A TASK]
+
+---
+
+# ⚙️ Fluxo padrão
+
+task → execução → código
+
+---
+
+# ⚡ Uso no dia a dia
+
+1. Descreva a task
+2. Use um prompt da pasta `tasks/`
+3. Revise o código gerado
+4. Ajuste se necessário
+
+---
+
+# 🧠 Quando pensar mais antes
+
+Use análise adicional apenas quando necessário:
+
+- problema não está claro
 - envolve múltiplos sistemas
-- existe risco técnico
+- existe risco de dados
+- fluxo é crítico
 
-Resultado:
-
-- entendimento profundo
-- identificação de riscos
-- levantamento de dependências
+👉 nesses casos, pense antes de executar
 
 ---
 
-## 2. Execution Planning (core)
+# 🧠 Princípios de engenharia
 
-Sempre que possível, use este passo.
-
-Responsável por:
-
-- transformar problema em plano executável
-- definir estratégia
-- quebrar em etapas pequenas
-- reduzir risco
-
-Resultado:
-
-- plano claro e executável
-
----
-
-## 3. Validation (opcional)
-
-Usado quando:
-
-- a task é crítica
-- existe risco de erro
-- o fluxo é complexo
-
-Responsável por:
-
-- validar o plano
-- identificar falhas e gaps
-- detectar riscos reais
-
-Resultado:
-
-- plano seguro para execução
-
----
-
-## 4. Execution
-
-Responsável por:
-
-- implementar o plano
-- manter consistência e simplicidade
-- evitar overengineering
-
----
-
-# ⚖️ Decision Rule
-
-Simples → execução direta
-
-Moderado → execution-planner
-
-Complexo / risco:
-→ problem-breakdown
-→ execution-planner
-→ validation-planner
-→ execution
-
----
-
-# ⚖️ Quick Decision Matrix
-
-| Tipo de tarefa       | Ação            |
-| -------------------- | --------------- |
-| Ajuste local         | Execução direta |
-| Função simples       | Execução direta |
-| Refactor pequeno     | Execução direta |
-| Debug simples        | Execução direta |
-| -------------------- | --------------- |
-| Task não trivial     | Planning        |
-| -------------------- | --------------- |
-| Debug complexo       | Fluxo completo  |
-| Multi-arquivo        | Fluxo completo  |
-| Integração externa   | Fluxo completo  |
-| Lógica crítica       | Fluxo completo  |
-| Concorrência / async | Fluxo completo  |
-
----
-
-# 🚨 Quando escalar
-
-Use fluxo completo quando houver:
-
-- falha repetida
-- múltiplos arquivos ou módulos
-- integração externa
-- lógica crítica
-- ambiguidade
-- concorrência / async
-
----
-
-# ⚙️ Execução
-
-## Backend
-
-Foco em:
-
-- consistência de dados
-- performance
-- segurança
-- concorrência e async
-
----
-
-## Frontend
-
-Foco em:
-
-- estado e renderização
-- consistência de UI/UX
-- controle de re-render
-- tratamento de loading/erro
-
----
-
-# 🧱 Templates
-
-Use templates quando:
-
-- precisar de maior controle
-- garantir padrão
-- evitar inconsistência
-
----
-
-# 🤖 Uso de IA
-
-Fluxo ideal:
-
-1. Entender → breakdown (se necessário)
-2. Planejar → execution-planner
-3. Validar → (se necessário)
-4. Executar → implementação
-
----
-
-# ⚖️ Regras importantes
-
-- Nunca codar sem entender
-- Preferir soluções simples
+- Preferir simplicidade
 - Evitar abstrações desnecessárias
 - Evitar dependências para problemas triviais
+- Reutilizar antes de criar
 - Fazer mudanças incrementais
-- Reutilizar padrões existentes
+- Seguir AGENTS.md sempre
 
 ---
 
-# 💡 Princípio central
+# 🚀 Boas práticas
 
-IA não substitui engenharia
-IA amplifica engenharia
+- Revisar sempre o código gerado
+- Não confiar cegamente na IA
+- Manter consistência com o projeto
+- Usar IA como apoio, não substituição
 
 ---
 
 # 🏁 Conclusão
 
-Este sistema garante:
+Sistema intencionalmente simples:
 
-- mais previsibilidade
-- menos bugs
-- menos retrabalho
-- decisões mais conscientes
-- maior consistência
+- AGENTS.md define as regras
+- core mantém as regras
+- tasks executam
 
 ---
 
-# 🚀 Como começar
+## Resultado esperado
 
-1. Pegue uma task
-2. Use execution-planner
-3. Execute o plano
-4. Escale apenas se necessário
+- mais velocidade
+- menos retrabalho
+- código consistente
+- uso eficiente de IA
