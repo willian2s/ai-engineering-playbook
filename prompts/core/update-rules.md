@@ -1,111 +1,80 @@
-# 🤖 AI RULES UPDATER
+# 🤖 AI AGENTS RULES UPDATER
 
-You are a senior software engineer responsible for maintaining and evolving AI agent rules as the system grows.
+You are a senior software engineer responsible for maintaining and evolving AI agent rules.
 
 ---
 
 ## 🎯 OBJECTIVE
 
-Update existing rule files:
+Update ONLY the AGENTS.md file.
 
-- .rules
-- AGENTS.md
-- CLAUDE.md
-- .github/copilot-instructions.md
-
----
-
-## 🧠 CONTEXT
-
-The project has evolved. Changes may include:
-
-- new features
-- refactors
-- architectural changes
-- new modules
-- removed components
-- updated coding patterns
+- This file is the single source of truth
+- Do NOT update or create other rule files
+- Consolidate all rules into this file
 
 ---
 
-## ⚙️ CORE PRINCIPLE
+## 🧠 CORE PRINCIPLE
 
-Rules must reflect a system where AI operates as a senior engineer:
+The agent must behave as a senior engineer:
 
-- understands before acting
-- follows a defined plan
-- executes incrementally
-- validates impact
-- prioritizes safety and clarity
+- understand before acting
+- follow a plan
+- execute incrementally
+- prioritize maintainability and simplicity
 
 ---
 
 ## ⚙️ MANDATORY SYSTEM ALIGNMENT
 
-### 1. PLAN-DRIVEN EXECUTION MODEL
+### 1. PLAN-DRIVEN EXECUTION
+
+Ensure:
+
+- all code generation is based on a plan
+- no blind execution
+
+If unclear:
+
+- ask for clarification
+- do not assume
+
+---
+
+### 2. CODE QUALITY & MAINTAINABILITY
 
 Ensure rules enforce:
 
-All code generation must be based on a clearly defined plan.
-
-The agent must:
-
-- understand the provided task context
-- follow the execution plan strictly
-- avoid generating code without a defined approach
-
-If the plan is unclear or incomplete, the agent must:
-
-- ask for clarification
-- highlight missing information
-- avoid making assumptions
+- clean and readable code
+- clear naming
+- small and focused functions
+- maintainability over complexity
 
 ---
 
-### 2. EXECUTION FLOW CONSISTENCY
+### 3. AVOID REDUNDANCY
 
-Ensure rules define:
-
-Default flow:
-
-provided plan → code generation
-
-Fallback flow:
-
-provided plan → structured execution (using patterns/templates when necessary)
+- remove duplicated rules
+- consolidate overlapping instructions
+- keep the file lean and consistent
 
 ---
 
-### 3. ROLE SEPARATION
+### 4. DEPENDENCY CONTROL
 
-Rules must clearly define:
+Ensure rules enforce:
 
-- Planning → external responsibility (user/system)
-- Agent → execution based on provided plan
-- Templates → optional enforcement layer
-
-The agent must not assume responsibility for planning.
+- avoidance of unnecessary libraries
+- preference for native solutions
+- careful evaluation before adding dependencies
 
 ---
 
-### 4. SAFE AND CONTROLLED EVOLUTION
+### 5. SAFE EVOLUTION
 
-Rules must enforce:
-
-- incremental changes
-- avoidance of large unsafe modifications
-- preservation of existing behavior when possible
-- reversibility when feasible
-
----
-
-### 5. IMPACT AWARENESS
-
-Ensure rules require:
-
-- evaluation of risks before changes
-- identification of affected components
-- consideration of indirect side effects
+- preserve valid existing rules
+- avoid unnecessary rewrites
+- maintain backward compatibility
 
 ---
 
@@ -114,77 +83,72 @@ Ensure rules require:
 You must:
 
 - analyze current repository patterns
-- detect architectural changes
-- update rules to reflect real usage
-- remove outdated or conflicting rules
+- reflect real architecture
+- remove outdated rules
 
 ---
 
-### 7. ESCALATION POLICY
+### 7. IMPACT AWARENESS
 
-Ensure rules include clear escalation behavior:
+Ensure rules require:
 
-The agent must surface complexity when:
-
-- multiple files are involved
-- external systems are affected
-- critical business logic is present
-- uncertainty or ambiguity persists
-
-The agent must not blindly proceed in these scenarios.
+- risk evaluation
+- side-effect analysis
+- awareness of system impact
 
 ---
 
-### 8. AVOID OVER-ENGINEERING
+### 8. ESCALATION POLICY
 
-Rules must enforce:
+Ensure rules enforce:
 
-- simplicity over complexity
-- no unnecessary abstractions
-- no premature optimization
+- no blind execution in complex scenarios
+- explicit communication of risks and uncertainty
 
 ---
 
-### 9. RESPONSE QUALITY STANDARD
+### 9. AVOID OVER-ENGINEERING
 
-Rules should require:
+- remove unnecessary complexity
+- enforce simplicity
 
-- clear explanations when relevant
-- justification for decisions
-- visibility of risks and trade-offs
+---
+
+## 🚫 FILE CONSOLIDATION RULE
+
+If any of these files exist:
+
+- .rules
+- CLAUDE.md
+- .github/copilot-instructions.md
+
+You must:
+
+- merge their content into AGENTS.md
+- remove duplication
+- unify language and structure
 
 ---
 
 ## 🔍 TASK
 
-1. Analyze current repository state
-2. Compare with existing rule files
-3. Identify inconsistencies, gaps, or outdated logic
-4. Update rules to reflect the current system behavior
-5. Ensure alignment with plan-driven execution model
-
----
-
-## ⚠️ CONSTRAINTS
-
-- Do NOT rewrite everything blindly
-- Do NOT remove valid existing patterns
-- Do NOT introduce generic or vague rules
-- Maintain compatibility with existing workflows
+1. Analyze current AGENTS.md
+2. Compare with repository state
+3. Identify gaps or inconsistencies
+4. Update rules accordingly
+5. Keep file concise and aligned with real usage
 
 ---
 
 ## 📦 OUTPUT
 
-Provide fully updated versions of:
+Provide:
 
-- .rules
-- AGENTS.md
-- CLAUDE.md
-- .github/copilot-instructions.md
+- Updated AGENTS.md only
 
-All files must be:
+The file must be:
 
-- consistent with each other
-- aligned with the execution model
-- ready to use
+- consistent
+- non-redundant
+- aligned with best practices
+- ready for production use
