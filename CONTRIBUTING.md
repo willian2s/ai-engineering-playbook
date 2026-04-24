@@ -1,95 +1,117 @@
 # 🤝 Contributing Guide
 
-Este projeto adota uma abordagem **AI-assisted engineering**.
+Este projeto adota uma abordagem de **AI-assisted engineering**.
 
-O uso de Inteligência Artificial (AI) é **fortemente recomendado**, pois aumenta produtividade, qualidade e consistência — mas **não é obrigatório**.
+O uso de Inteligência Artificial é recomendado para aumentar produtividade, qualidade e consistência — mas não é obrigatório.
 
 ---
 
 # 🧠 Princípios
 
-- AI é uma ferramenta para amplificar engenharia
+- AI amplifica engenharia, não substitui
 - Clareza > complexidade
 - Segurança > velocidade
-- Consistência entre serviços é essencial
-- Decisão final sempre é humana
+- Consistência é obrigatória
+- Decisão final é sempre humana
 
 ---
 
-# 🤖 Uso de AI (recomendado)
+# ⚙️ Fluxo de desenvolvimento
 
-Recomendamos o uso de AI nos seguintes cenários:
+Todo desenvolvimento deve seguir, sempre que possível, o fluxo:
 
-## 🔹 1. Antes de implementar mudanças relevantes
+problem → breakdown → planning → validation → execution → code
 
-Use AI para:
+---
 
-- entender o impacto da mudança
+## ⚖️ Regra de decisão
+
+Simples → execução direta
+
+Moderado → execution-planner
+
+Complexo / risco:
+→ problem-breakdown
+→ execution-planner
+→ validation-planner
+→ execução
+
+---
+
+## 🚨 Quando escalar
+
+Use o fluxo completo quando houver:
+
+- falha repetida
+- múltiplos arquivos ou módulos
+- integração externa
+- lógica crítica
+- ambiguidade
+- concorrência / async
+
+---
+
+# 🤖 Uso de AI
+
+A AI pode ser utilizada em qualquer etapa do fluxo.
+
+---
+
+## 🔹 Antes de implementar
+
+Use para:
+
+- entender o problema
 - identificar riscos
-- validar abordagem
+- estruturar abordagem (planning)
 
 ---
 
-## 🔹 2. Durante implementação
+## 🔹 Durante implementação
 
-Use AI para:
+Use para:
 
 - gerar código base
-- sugerir melhorias
-- evitar duplicação
+- reduzir repetição
 - manter consistência
+- seguir padrões existentes
 
 ---
 
-## 🔹 3. Após implementação
+## 🔹 Após implementação
 
-Use AI para:
+Use para:
 
 - revisar código
 - identificar edge cases
 - validar integrações
-- sugerir melhorias
+- melhorar qualidade
 
 ---
 
-## 🔹 4. Antes de abrir PR
+## 🔹 Antes do PR
 
 Recomendado:
 
-- revisão com AI
-- análise de impacto
-- validação de regras do projeto
+- revisar código
+- validar impacto
+- garantir consistência com o projeto
 
 ---
 
-# 🧩 Ferramentas
+# 📄 Regras do projeto
 
-Você pode utilizar qualquer ferramenta de AI:
+Todo código deve seguir:
 
-- Copilot
-- Cursor
-- Zed
-- Claude Code
-- ou outras
+- padrões existentes no projeto
+- boas práticas de arquitetura
+- consistência entre módulos
 
-👉 Desde que:
+Evitar:
 
-- respeite as regras do projeto
-- não prejudique o fluxo de trabalho do time
-- mantenha consistência com o código existente
-
----
-
-# 📄 Regras do projeto (obrigatório respeitar)
-
-Independentemente da ferramenta utilizada, é obrigatório seguir:
-
-- `.rules`
-- `AGENTS.md`
-- `CLAUDE.md`
-- `.github/copilot-instructions.md`
-
-Esses arquivos definem como o código deve ser escrito e mantido.
+- duplicação
+- abstrações desnecessárias
+- dependências para problemas triviais
 
 ---
 
@@ -98,58 +120,52 @@ Esses arquivos definem como o código deve ser escrito e mantido.
 ## ✔️ Faça
 
 - Use AI para acelerar tarefas repetitivas
+- Use AI para estruturar soluções
 - Use AI para revisar código
-- Use AI para entender partes complexas do sistema
 - Combine AI com julgamento técnico
+
+---
 
 ## ❌ Evite
 
 - confiar cegamente na AI
 - gerar código sem entender
 - ignorar padrões do projeto
-- introduzir inconsistências
+- introduzir inconsistência
+
+---
+
+# ⚙️ Execução
+
+## Backend
+
+Garantir:
+
+- consistência de dados
+- tratamento de erros
+- segurança
+- idempotência quando necessário
+
+---
+
+## Frontend
+
+Garantir:
+
+- consistência de estado
+- controle de renderização
+- tratamento de loading/erro
+- experiência do usuário
 
 ---
 
 # ✅ Checklist antes do PR
 
-Antes de abrir um PR, recomenda-se:
-
-- [ ] Código revisado (com ou sem AI)
-- [ ] Consistência com `.rules`
-- [ ] Impacto avaliado (outros serviços / módulos)
+- [ ] Código revisado
+- [ ] Consistência com o projeto
+- [ ] Impacto avaliado
 - [ ] Integrações validadas
 - [ ] Edge cases considerados
-
----
-
-# 🧠 Uso de modelos (referência)
-
-## ⚡ Modelos leves (ex: GPT-5.1-mini)
-
-- autocomplete
-- tarefas simples
-- código repetitivo
-
----
-
-## 🧠 Modelos avançados (ex: GPT-5.4, Claude)
-
-- debugging
-- decisões técnicas
-- análise de impacto
-- refatorações
-
----
-
-# 🔁 Fluxo recomendado
-
-1. Entender o problema
-2. (Opcional) Validar com AI
-3. Implementar solução
-4. Revisar (com ou sem AI)
-5. Ajustar
-6. Abrir PR
 
 ---
 
@@ -161,50 +177,28 @@ Sempre garantir:
 - segurança em retries
 - proteção contra race conditions
 - consistência de dados
-- tratamento seguro de APIs externas
+- tratamento seguro de integrações externas
 
 ---
 
-# 🧪 Auditoria e evolução
-
-Recomendado:
-
-- rodar auditorias periódicas
-- atualizar rules após mudanças relevantes
-- revisar padrões do projeto com frequência
-
----
-
-# 📝 Commits (Commitizen)
+# 📝 Commits
 
 Padrões:
 
-```bash id="commit-types"
 feat: nova funcionalidade
 fix: correção de bug
 chore: manutenção
 refactor: refatoração
 docs: documentação
-```
-
----
-
-## 🤖 Commits relacionados a AI (opcional)
-
-```bash id="commit-ai"
-feat(ai): generate rules
-chore(ai): update rules
-docs(ai): add audit report
-refactor(ai): improvements based on AI suggestions
-```
 
 ---
 
 # 🧠 Filosofia do time
 
 - AI é uma ferramenta, não uma obrigação
-- Consistência do código é mais importante que a ferramenta usada
-- O time deve conseguir trabalhar junto independentemente da ferramenta escolhida
+- O processo é mais importante que a ferramenta
+- Consistência do código é essencial
+- O time deve conseguir trabalhar junto independentemente da ferramenta
 
 ---
 
@@ -212,8 +206,8 @@ refactor(ai): improvements based on AI suggestions
 
 Você é livre para usar AI da forma que preferir.
 
-👉 Desde que:
+Desde que:
 
-- respeite as regras do projeto
+- respeite o fluxo do projeto
 - mantenha qualidade e consistência
-- não impacte negativamente o fluxo do time
+- não introduza riscos desnecessários

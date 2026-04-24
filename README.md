@@ -2,7 +2,7 @@
 
 Este repositório define um sistema estruturado para uso de IA no desenvolvimento de software.
 
-O objetivo é transformar IA em uma **ferramenta previsível, consistente e escalável**, evitando respostas aleatórias e garantindo qualidade de engenharia.
+O objetivo é transformar IA em uma ferramenta previsível, consistente e escalável, garantindo qualidade de engenharia e evitando comportamento aleatório.
 
 ---
 
@@ -10,11 +10,11 @@ O objetivo é transformar IA em uma **ferramenta previsível, consistente e esca
 
 Padronizar:
 
-* como problemas são analisados
-* como soluções são planejadas
-* como código é gerado
-* como decisões técnicas são tomadas
-* como escalar uso de IA com segurança
+- como problemas são analisados
+- como soluções são planejadas
+- como decisões técnicas são tomadas
+- como código é implementado
+- como escalar o uso de IA com segurança
 
 ---
 
@@ -22,11 +22,11 @@ Padronizar:
 
 A IA deve operar como um engenheiro sênior que:
 
-* pensa antes de agir
-* planeja antes de executar
-* trabalha de forma incremental
-* valida impacto
-* evita complexidade desnecessária
+- pensa antes de agir
+- planeja antes de executar
+- trabalha de forma incremental
+- valida impacto
+- evita complexidade desnecessária
 
 ---
 
@@ -34,43 +34,25 @@ A IA deve operar como um engenheiro sênior que:
 
 ```
 /ai
-  /rules
-    .rules
-    AGENTS.md
-    CLAUDE.md
-    .github/
-      copilot-instructions.md
-
   /prompts
     /core
       generate-rules-auto.md
-      generate-rules-with-context.md
       update-rules.md
       audit-architecture.md
-
     /planning
-      README.md
       problem-breakdown.md
-      validation-planner.md
       execution-planner.md
-
+      validation-planner.md
     /execution
       backend-pattern.md
       frontend-pattern.md
-
-  /playbooks
-    decision-matrix.md
-    escalation-playbook.md
-    tooling-guide.md
 ```
 
 ---
 
 # ⚙️ Fluxo principal
 
-```bash
-problem → breakdown → validation → execution → código
-```
+problem → breakdown → planning → validation → execution → code
 
 ---
 
@@ -80,138 +62,171 @@ problem → breakdown → validation → execution → código
 
 Usado quando:
 
-* o problema não está claro
-* envolve múltiplos sistemas
-* existe risco técnico
+- o problema não está claro
+- envolve múltiplos sistemas
+- existe risco técnico
 
-👉 Resultado: entendimento profundo do problema
+Resultado:
 
----
-
-## 2. Validation Planner (opcional)
-
-Usado quando:
-
-* a task é crítica
-* existe risco de erro
-* o fluxo é complexo
-
-👉 Resultado: plano validado e seguro
+- entendimento profundo
+- identificação de riscos
+- levantamento de dependências
 
 ---
 
-## 3. Execution Planner (CORE)
+## 2. Execution Planning (core)
 
 Sempre que possível, use este passo.
 
 Responsável por:
 
-* transformar problema em plano executável
-* identificar riscos
-* gerar bloco pronto para execução
+- transformar problema em plano executável
+- definir estratégia
+- quebrar em etapas pequenas
+- reduzir risco
 
-👉 Output: plano + bloco pronto para uso
+Resultado:
 
----
-
-## 4. Execução
-
-### Fluxo padrão (80–90%)
-
-```bash
-execution-planner → Copilot → código
-```
+- plano claro e executável
 
 ---
 
-### Fluxo com controle (quando necessário)
+## 3. Validation (opcional)
 
-```bash
-execution-planner → template → Copilot
-```
+Usado quando:
 
----
+- a task é crítica
+- existe risco de erro
+- o fluxo é complexo
 
-### Escalonamento (casos complexos)
+Responsável por:
 
-```bash
-Copilot falha → Codex / modelo mais forte
-```
+- validar o plano
+- identificar falhas e gaps
+- detectar riscos reais
 
----
+Resultado:
 
-# 🧱 Templates (Execution)
-
-Os templates são **opcionais** e usados como mecanismo de controle.
-
-Use quando:
-
-* o agente começa a se perder
-* precisa garantir padrão arquitetural
-* código precisa ser altamente consistente
+- plano seguro para execução
 
 ---
 
-# 📘 Playbooks
+## 4. Execution
 
-## Decision Matrix
+Responsável por:
 
-Define:
-
-* quando usar cada modelo
-* quando escalar
-* nível de complexidade
+- implementar o plano
+- manter consistência e simplicidade
+- evitar overengineering
 
 ---
 
-## Escalation Playbook
+# ⚖️ Decision Rule
 
-Define gatilhos claros:
+Simples → execução direta
 
-* Copilot falhou 2x
-* múltiplos arquivos envolvidos
-* fluxo externo (API, pagamento, etc.)
-* lógica crítica
+Moderado → execution-planner
+
+Complexo / risco:
+→ problem-breakdown
+→ execution-planner
+→ validation-planner
+→ execution
 
 ---
 
-## Tooling Guide
+# ⚖️ Quick Decision Matrix
 
-Define como usar:
+| Tipo de tarefa       | Ação            |
+| -------------------- | --------------- |
+| Ajuste local         | Execução direta |
+| Função simples       | Execução direta |
+| Refactor pequeno     | Execução direta |
+| Debug simples        | Execução direta |
+| -------------------- | --------------- |
+| Task não trivial     | Planning        |
+| -------------------- | --------------- |
+| Debug complexo       | Fluxo completo  |
+| Multi-arquivo        | Fluxo completo  |
+| Integração externa   | Fluxo completo  |
+| Lógica crítica       | Fluxo completo  |
+| Concorrência / async | Fluxo completo  |
 
-* Copilot
-* Codex
-* outros modelos
+---
+
+# 🚨 Quando escalar
+
+Use fluxo completo quando houver:
+
+- falha repetida
+- múltiplos arquivos ou módulos
+- integração externa
+- lógica crítica
+- ambiguidade
+- concorrência / async
+
+---
+
+# ⚙️ Execução
+
+## Backend
+
+Foco em:
+
+- consistência de dados
+- performance
+- segurança
+- concorrência e async
+
+---
+
+## Frontend
+
+Foco em:
+
+- estado e renderização
+- consistência de UI/UX
+- controle de re-render
+- tratamento de loading/erro
+
+---
+
+# 🧱 Templates
+
+Use templates quando:
+
+- precisar de maior controle
+- garantir padrão
+- evitar inconsistência
 
 ---
 
 # 🤖 Uso de IA
 
-## Fluxo ideal
+Fluxo ideal:
 
-```bash
-1. Pensar → planner
-2. Validar → (opcional)
-3. Executar → Copilot
-4. Escalar → Codex (se necessário)
-```
+1. Entender → breakdown (se necessário)
+2. Planejar → execution-planner
+3. Validar → (se necessário)
+4. Executar → implementação
 
 ---
 
 # ⚖️ Regras importantes
 
-* Nunca codar sem entender
-* Evitar mudanças grandes sem necessidade
-* Priorizar clareza sobre complexidade
-* Sempre considerar impacto
-* Reutilizar padrões existentes
+- Nunca codar sem entender
+- Preferir soluções simples
+- Evitar abstrações desnecessárias
+- Evitar dependências para problemas triviais
+- Fazer mudanças incrementais
+- Reutilizar padrões existentes
 
 ---
 
 # 💡 Princípio central
 
-> IA não deve substituir engenharia
-> IA deve amplificar engenharia
+IA não substitui engenharia
+IA amplifica engenharia
 
 ---
 
@@ -219,21 +234,17 @@ Define como usar:
 
 Este sistema garante:
 
-* mais previsibilidade
-* menos bugs
-* menos retrabalho
-* melhor uso de IA
-* maior consistência entre devs
+- mais previsibilidade
+- menos bugs
+- menos retrabalho
+- decisões mais conscientes
+- maior consistência
 
 ---
 
 # 🚀 Como começar
 
 1. Pegue uma task
-2. Rode o `execution-planner`
-3. Use o output diretamente no Copilot
-4. Use templates apenas se necessário
-
----
-
-Isso é tudo que você precisa para usar IA como um engenheiro sênior.
+2. Use execution-planner
+3. Execute o plano
+4. Escale apenas se necessário
