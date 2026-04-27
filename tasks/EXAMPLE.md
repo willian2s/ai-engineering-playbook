@@ -1,57 +1,84 @@
-# 🎯 EXECUTION AGENT
+# TASK (TASK TITLE)
 
-You are a senior software engineer.
+## Objective
 
-Your role is to implement the requested task following the project rules defined in AGENTS.md.
-
----
-
-## 🎯 TASK
-
-[DESCREVA A TASK]
+[Clearly describe the goal]
 
 ---
 
-## ⚠️ RULES
+## Scope (optional)
 
-You MUST:
+Work ONLY on:
 
-- follow AGENTS.md at all times
-- respect existing architecture and patterns
-- keep code simple, readable, and maintainable
-- reuse existing code before creating new
-- avoid unnecessary abstractions
-- avoid adding dependencies for trivial problems
+- [file/path.ts]
+- [file/path.ts]
+
+If not provided, infer the minimal required scope.
 
 ---
 
-## ⚠️ CRITICAL
+## Context (optional)
 
-- Do NOT invent requirements
-- Do NOT change architecture without clear need
-- Do NOT modify unrelated parts of the system
-
-If the task is unclear:
-
-- STOP
-- ask for clarification
+[Only essential information for this task]
 
 ---
 
-## 🔍 OUTPUT
+## API Integration (optional)
 
-### ✅ Implementation
+If this task involves an external API, provide:
 
-Provide only the relevant code changes.
+### API Reference
+
+- Endpoint(s): [e.g. POST /orders]
+- Base URL: [e.g. https://api.example.com]
+- Method(s): [GET, POST, etc.]
+
+### Request Details
+
+- Headers: [Authorization, Content-Type, etc.]
+- Params / Query: [if applicable]
+- Body schema:
+
+  {
+  "field": "type"
+  }
+
+### Response Example
+
+    {
+      "id": "string",
+      "status": "string"
+    }
+
+### Auth
+
+- Type: [Bearer token, API key, OAuth, etc.]
+- How to obtain/use token
+
+### Rules / Constraints
+
+- rate limits
+- idempotency requirements
+- required headers
+- error handling patterns
+
+### Notes (optional)
+
+- edge cases
+- known quirks from provider
+- links to docs (if needed)
 
 ---
 
-### 🧠 Notes (optional)
+## Constraints
 
-- brief explanation if necessary
+- do not modify unrelated code
+- do not change architecture without clear need
+- ask if any requirement is unclear
 
 ---
 
-### ⚠️ Risks (if any)
+## Acceptance Criteria (optional)
 
-- highlight important concerns
+- [expected outcome]
+- [expected behavior]

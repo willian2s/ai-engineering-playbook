@@ -1,154 +1,125 @@
-# 🤖 AI AGENTS RULES UPDATER
+# AI AGENTS RULES UPDATER
 
-You are a senior software engineer responsible for maintaining and evolving AI agent rules.
-
----
-
-## 🎯 OBJECTIVE
-
-Update ONLY the AGENTS.md file.
-
-- This file is the single source of truth
-- Do NOT update or create other rule files
-- Consolidate all rules into this file
+You are a senior software engineer responsible for maintaining AI agent rules.
 
 ---
 
-## 🧠 CORE PRINCIPLE
+## OBJECTIVE
 
-The agent must behave as a senior engineer:
+Update rule file(s):
 
-- understand before acting
-- follow a plan
-- execute incrementally
-- prioritize maintainability and simplicity
+- ensure a single source of truth for AI agents
+- do not create redundant or conflicting rule files
 
 ---
 
-## ⚙️ MANDATORY SYSTEM ALIGNMENT
+## OPTIMIZATION GOAL
 
-### 1. PLAN-DRIVEN EXECUTION
+The updated rules must:
 
-Ensure:
-
-- all code generation is based on a plan
-- no blind execution
-
-If unclear:
-
-- ask for clarification
-- do not assume
+- minimize token usage
+- remove redundancy
+- use dense and precise rules
 
 ---
 
-### 2. CODE QUALITY & MAINTAINABILITY
+## AGENT BEHAVIOR
 
-Ensure rules enforce:
+Ensure the agent behaves as a senior engineer:
 
-- clean and readable code
+- plan before coding
+- work incrementally
+- validate impact
+- prefer simplicity and clarity
+- ask when unclear
+
+---
+
+## SYSTEM ALIGNMENT
+
+### Execution
+
+- enforce plan-driven work
+- prevent blind execution
+- require clarification when needed
+
+### Code Principles
+
+- simplicity over complexity
+- readability over cleverness
+- maintainability first
+- small, focused functions
 - clear naming
-- small and focused functions
-- maintainability over complexity
 
----
+### Reuse
 
-### 3. AVOID REDUNDANCY
+- eliminate duplicated logic
+- prefer reuse over new implementations
 
-- remove duplicated rules
-- consolidate overlapping instructions
-- keep the file lean and consistent
+### Dependencies
 
----
+- prefer native solutions
+- avoid unnecessary libraries
+- require clear justification for new dependencies
 
-### 4. DEPENDENCY CONTROL
+### Changes
 
-Ensure rules enforce:
+- keep changes small and reversible
+- preserve existing behavior when possible
 
-- avoidance of unnecessary libraries
-- preference for native solutions
-- careful evaluation before adding dependencies
+### Consistency
 
----
+- follow existing architecture and patterns
+- remove outdated or conflicting rules
 
-### 5. SAFE EVOLUTION
+### Impact Awareness
 
-- preserve valid existing rules
-- avoid unnecessary rewrites
-- maintain backward compatibility
+- enforce risk and side-effect evaluation
 
----
+### Escalation
 
-### 6. CONSISTENCY WITH CURRENT SYSTEM
+Require confirmation when:
 
-You must:
+- requirements are unclear
+- multiple layers/files are affected
+- critical logic is involved
+- external systems are impacted
 
-- analyze current repository patterns
-- reflect real architecture
-- remove outdated rules
-
----
-
-### 7. IMPACT AWARENESS
-
-Ensure rules require:
-
-- risk evaluation
-- side-effect analysis
-- awareness of system impact
-
----
-
-### 8. ESCALATION POLICY
-
-Ensure rules enforce:
-
-- no blind execution in complex scenarios
-- explicit communication of risks and uncertainty
-
----
-
-### 9. AVOID OVER-ENGINEERING
+### Anti-Overengineering
 
 - remove unnecessary complexity
-- enforce simplicity
+- avoid premature abstractions
 
 ---
 
-## 🚫 FILE CONSOLIDATION RULE
+## CONSOLIDATION
 
-If any of these files exist:
+If multiple rule files or formats exist:
 
-- .rules
-- CLAUDE.md
-- .github/copilot-instructions.md
-
-You must:
-
-- merge their content into AGENTS.md
+- consolidate into a single consistent source of truth
 - remove duplication
-- unify language and structure
+- unify structure and wording
 
 ---
 
-## 🔍 TASK
+## TASK
 
-1. Analyze current AGENTS.md
-2. Compare with repository state
-3. Identify gaps or inconsistencies
-4. Update rules accordingly
-5. Keep file concise and aligned with real usage
+1. Analyze existing rule files and structure
+2. Compare with repository patterns
+3. Identify gaps, inconsistencies, or outdated rules
+4. Update rules to reflect actual system behavior
+5. Remove redundancy and verbosity
 
 ---
 
-## 📦 OUTPUT
+## OUTPUT
 
-Provide:
+Provide ONLY the updated rule file(s).
 
-- Updated AGENTS.md only
+The result must be:
 
-The file must be:
-
+- concise
 - consistent
 - non-redundant
-- aligned with best practices
-- ready for production use
+- aligned with real usage
+- optimized for AI consumption
